@@ -1,0 +1,127 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+* > {
+    box-sizing: border-box;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+/* Intro Page */
+
+#intro {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    height: 100%;
+    width: 100%;
+    grid-template-areas:
+    "name name name"
+    "bio bio bio"
+    "badges badges badges";
+    background-image: url(Assets/pexels-felix-mittermeier-956999.jpg);
+    background-size: cover;
+    justify-content: center;
+}
+
+#intro-name {
+    grid-area: name;
+    font-size: 7vw;
+    color: white;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#intro-bio {
+    grid-area: bio;
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#intro-badges {
+    grid-area: badges;
+    display: flex;
+    height: 100%;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.intro-badge {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 15vh;
+    width: 15vw;
+}
+
+.intro-badge-image {
+    margin-bottom: 56px;
+}
+
+.intro-caption {
+    align-self: center;
+    font-size: 3vw;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Nav */
+
+#nav {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    border: 3px solid gray;
+}
+
+#nav ul {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+#nav a {
+    background-color: black;
+    padding: 10px;
+    border: 3px solid gray;
+    color: white;
+    text-decoration: none;
+}
+
+.fixed-nav nav {
+    position: fixed;
+    box-shadow: 0 5px rgba(0,0,0,0.1);
+    top: 0;
+}
+
+/* Projects Page */
+
+#projects-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.project {
+    color: white;
+    margin: 50px;
+    padding: 50px;
+}
