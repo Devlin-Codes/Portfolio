@@ -6,7 +6,7 @@
         <title>Devlin's Portfolio</title>
     </head>
     <body>
-        <header id="intro">
+        <section id="intro">
             <h1 id="intro-name" class="intro">Devlin Rocha</h1>
             <h2 id="intro-bio" class="intro">Front-end web developer</h2>
             <div id="intro-badges">
@@ -23,43 +23,55 @@
                     <img id="intro-javascript-image" class="intro-badge-image" src="Assets/javascript.svg" alt="JavaScript">
                 </figure>
             </div>
-        </header>
-        <nav id="nav">
-            <ul>
-                <a href=#>Follow</a>
-                <a href=#>Projects</a>
-                <a href=#>Contact</a>
+        </section>
+        <nav id="nav" class="top">
+            <div class="dropdown-background">
+                <span class="arrow"></span>
+            </div>
+
+            <ul class="cool">
+                <li id="nav-follow" class="nav-dropdown">
+                    <a href=#>Follow</a>
+                    <ul class="dropdown dropdown1 follow">
+                        <li><a class="follow-link" href="https://www.instagram.com/devlincodes" target="_blank" rel="noopener noreferrer">Instragram</a></li>
+                        <li><a class="follow-link" href="https://github.com/Devlin-Codes" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    </ul>
+                </li>
+                <li id="nav-projects">
+                    <button>Projects</button>
+                </li>
+                <li id="nav-contact" class="nav-dropdown">
+                    <a href=#>Contact</a>
+                    <ul class="dropdown dropdown2 contact">
+                        <li><a class="contact-link" href="#" target="_blank" rel="noopener noreferrer">Email</a></li>
+                        <li><a class="contact-link" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <main id="projects">
             <figure id=sketch-paint class="project">
-                <figcaption class="project-caption">Sketch-Paint</figcaption>
-                <a>
+                <figcaption class="project-caption">Sketch Paint</figcaption>
+                <a href="https://devlin-codes.github.io/Sketch-Paint/" target="_blank" rel="noopener noreferrer">
                     <img id="sketch-paint-image" class="project-image" src="Assets/Sketch_Paint[1].png">
                 </a>
             </figure>
             <figure id="calculator" class="project">
                 <figcaption class="project-caption">Calculator</figcaption>
-                <a>
+                <a href="https://devlin-codes.github.io/Calculator/" target="_blank" rel="noopener noreferrer">
                     <img id="calculator-image" class="project-image" src="Assets/calculator_preview[3].png">
                 </a>
             </figure>
             <figure id="rock-paper-scissors" class="project">
-                <figcaption class="project-caption">Rock-Paper-Scissors</figcaption>
-                <a>
+                <figcaption class="project-caption">Rock Paper Scissors</figcaption>
+                <a href="https://devlin-codes.github.io/Rock-Paper-Scissors/" target="_blank" rel="noopener noreferrer">
                     <img id="rock-paper-scissors-image" class="project-image" src="Assets/rock-paper-scissors[1].png">
                 </a>
             </figure>
             <figure id="google-recreation" class="project">
                 <figcaption class="project-caption">Google Recreation</figcaption>
-                <a>
+                <a href="https://devlin-codes.github.io/Google-Homepage/" target="_blank" rel="noopener noreferrer">
                     <img id="google-recreation-image" class="project-image" src="Assets/Google[1].png">
-                </a>
-            </figure>
-            <figure id="tribute-page-sample" class="project">
-                <figcaption class="project-caption">Sample Tribute Page</figcaption>
-                <a>
-                    <img id="tribute-page-sample-image" class="project-image" src=#>
                 </a>
             </figure>
         </main>

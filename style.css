@@ -1,4 +1,5 @@
 html {
+    box-sizing: border-box;
     height: 100%;
     width: 100%;
     background-color: black;
@@ -64,7 +65,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 12vh;
+    height: auto;
     width: 12vw;
 }
 
@@ -89,13 +90,21 @@ body {
 }
 
 #nav ul {
+    list-style: none;
     display: flex;
     justify-content: space-around;
+    align-content: center;
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-#nav a {
+#nav li {
+    position: relative;
+    display: flex;
+    justify-content: center;
     background-color: black;
     padding: 10px;
     border: 3px solid gray;
@@ -109,6 +118,62 @@ body {
     top: 0;
 }
 
+.dropdown {
+    opacity: 0;
+    position: absolute;
+    overflow: hidden;
+    padding: 20px;
+    top: -20px;
+    border-radius: 2px;
+    transition: all 0.5s;
+    transform: translateY(100px);
+    will-change: opacity;
+    display: none;
+}
+
+.trigger-enter .dropdown {
+    display: block;
+}
+
+.trigger-enter-active .dropdown {
+    opacity: 1;
+}
+
+.dropdown-background {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+    transition: all .3s, opacity 0.1s, transform 0.2s;
+    transform-origin: 50% 0;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+
+.dropdown-background.open {
+    opacity: 1;
+}
+
+.arrow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: white;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.follow {
+    min-width: 300px;
+}
+
+.contact {
+    min-width: 300px;
+}
+
 /* Projects Page */
 
 #projects {
@@ -116,18 +181,26 @@ body {
     grid-template-rows: auto;
     grid-template-columns: auto;
     grid-template-areas:
-    "calculator sketch rps"
-    ". google tribute";
+    "calculator sketch"
+    "rps google";
     height: 100%;
     width: 100%;
+    justify-content: center;
+    align-content: space-around;
 }
 
 .project {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: center;
+    align-items: center;
     align-content: space-between;
     margin: 0;
+}
+
+.project a {
+    display: flex;
+    justify-content: center;
 }
 
 .project-image{
@@ -137,7 +210,6 @@ body {
 
 .project-caption {
     color: white;
-    align-self: center;
     font-size: 3vw;
 }
 
@@ -155,8 +227,4 @@ body {
 
 #google-recreation {
     grid-area: google;
-}
-
-#tribute-page-sample {
-    grid-area: tribute;
 }
