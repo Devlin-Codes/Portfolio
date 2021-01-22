@@ -14,9 +14,10 @@ let topOfNav;
 
 function handleEnter() {
     this.classList.add('.trigger-enter');
+    console.log('enter')
     setTimeout(() => {
-        if (this.classList.contains('trigger-enter')) {
-            this.classList.add('trigger-enter-active');
+        if (this.classList.contains('.trigger-enter')) {
+            this.classList.add('.trigger-enter-active');
         };
     }, 150);
     dropdownBackground.classList.add('open');

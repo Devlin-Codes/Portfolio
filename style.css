@@ -3,6 +3,7 @@ html {
     height: 100%;
     width: 100%;
     background-color: black;
+    font-family: 'Oswald', sans-serif;
 }
 
 * > {
@@ -59,8 +60,9 @@ body {
     grid-area: badges;
     display: flex;
     height: 100%;
-    width: 100%;
-    justify-content: center;
+    width: 100vw;
+    justify-content: space-around;
+    margin: 0 0 150px;
 }
 
 .intro-badge {
@@ -69,6 +71,8 @@ body {
     flex-direction: column;
     height: auto;
     width: 12vw;
+    max-width: 155px;
+    margin: 0;
 }
 
 .intro-caption {
@@ -87,6 +91,8 @@ body {
     width: 100%;
     background-color: black;
     border: 3px solid gray;
+    background-image: url(Assets/pexels-pixabay-355288.jpg);
+    background-size: cover;
 }
 
 .nav-list {
@@ -232,29 +238,23 @@ body {
     "rps google";
     height: 100%;
     width: 100%;
-    justify-content: center;
-    align-content: space-around;
-    background-image: url(Assets/pexels-daniel-absi-952670.jpg);
+    background-image: url(Assets/pexels-philippe-donn-1169754.jpg);
     background-size: cover;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .project {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: space-between;
     margin: 0;
-}
-
-.project a {
-    display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .project-image{
     height: auto;
-    width: 50%;
+    width: 17vw;
 }
 
 .project-caption {
