@@ -4,6 +4,7 @@ html {
     width: 100%;
     background-color: black;
     font-family: 'Oswald', sans-serif;
+    overflow-x: hidden;
 }
 
 * > {
@@ -62,7 +63,7 @@ body {
     height: 100%;
     width: 100vw;
     justify-content: space-around;
-    margin: 0 0 150px;
+    margin: 0 0 100px;
 }
 
 .intro-badge {
@@ -89,21 +90,10 @@ body {
     display: flex;
     height: 50px;
     width: 100%;
-    background-color: black;
-    border: 3px solid gray;
+    border-top: 2px solid purple;
+    border-bottom: 2px solid purple;
     background-image: url(Assets/pexels-pixabay-355288.jpg);
     background-size: cover;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: space-around;
-}
-
-.nav-list > li > a {
-    color: white;
-    text-decoration: none;
-    display: inline-block;
 }
 
 #nav ul {
@@ -116,32 +106,28 @@ body {
     list-style-type: none;
 }
 
-.nav-list > li {
-    position: relative;
+.nav-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .nav-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    text-decoration: none;
     width: 100px;
 }
 
 .nav-text {
-    text-decoration: none;
-    font-size: 16px;
-    background: rgba(0,0,0,0.2);
-    display: inline-block;
-}    
-
-#nav li {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    padding: 10px;
-    border: 3px solid gray;
     color: white;
     text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    align-self: center;
+    background-color: black;
+    padding: 7px;
 }
 
 .fixed-nav nav {
@@ -163,12 +149,10 @@ body {
     display: none;
 }
 
-.dropdown li {
-    font-size: 20px;
-}
-
 .trigger-enter .dropdown {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .trigger-enter-active .dropdown {
@@ -179,7 +163,7 @@ body {
     width: 100px;
     height: 100px;
     position: absolute;
-    background: #fff;
+    background: white;
     border-radius: 4px;
     box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
     transition: all .3s, opacity 0.1s, transform 0.2s;
@@ -202,29 +186,10 @@ body {
     transform: translateY(-50%) rotate(45deg);
 }
 
-.follow {
-    min-width: 300px;
-}
-
-.follow li {
-    display: block;
-    border-bottom: 1px solid black;
-}
-
-.contact {
-    min-width: 300px;
-}
-
-.contact li {
-    display: block;
-}
-
-.contact-link {
-    background: black;
-    display: block;
-    padding: 10px;
-    color: white;
-    margin-bottom: 10px;
+.dropdown-content {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
 }
 
 /* Projects Page */
@@ -234,6 +199,7 @@ body {
     grid-template-rows: auto;
     grid-template-columns: auto;
     grid-template-areas:
+    "projects projects"
     "calculator sketch"
     "rps google";
     height: 100%;
@@ -243,6 +209,14 @@ body {
     overflow: hidden;
     align-items: center;
     justify-content: space-around;
+}
+
+#projects-title {
+    grid-area: projects;
+    justify-self: center;
+    font-size: 7vw;
+    margin: 50px 0 0;
+    color: white;
 }
 
 .project {
@@ -255,6 +229,7 @@ body {
 .project-image{
     height: auto;
     width: 17vw;
+    max-width: 250px;
 }
 
 .project-caption {
