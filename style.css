@@ -197,17 +197,17 @@ body {
 #projects {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: auto;
+    grid-template-columns: 250px 1fr 250px;
     grid-template-areas:
-    "projects projects"
-    "calculator sketch"
-    "rps google";
+    "projects projects projects"
+    "carousel carousel carousel"
+    ". . .";
     height: 100%;
     width: 100%;
     background-image: url(Assets/pexels-philippe-donn-1169754.jpg);
     background-size: cover;
     overflow: hidden;
-    align-items: center;
+    align-items: space-around;
     justify-content: space-around;
 }
 
@@ -215,7 +215,7 @@ body {
     grid-area: projects;
     justify-self: center;
     font-size: 7vw;
-    margin: 50px 0 0;
+    margin: 100px 0 0;
     color: white;
 }
 
@@ -251,4 +251,36 @@ body {
 
 #google-recreation {
     grid-area: google;
+}
+
+#projects-container {
+    grid-area: container;
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+
+#inline-frame {
+    height: 100%;
+    width: 100%;
+}
+
+.projects-arrows {
+    color: white;
+    height: auto;
+    width: 10vw;
+}
+
+#left-arrow {
+    grid-area: left-arrow;
+}
+
+#right-arrow {
+    grid-area: right-arrow;
+}
+
+#projects-carousel {
+    grid-area: carousel;
+    display: flex;
+    justify-content: space-evenly;
 }
