@@ -85,4 +85,9 @@ window.addEventListener('scroll', fixNav);
 triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
 triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 projectsButton.addEventListener('click', scroll);
-navDropdown.forEach(navButton => navButton.addEventListener('click', prevent));
+
+// TEMPORARY:
+
+block = document.querySelectorAll('.block');
+
+block.forEach(navButton => navButton.addEventListener('click', prevent));

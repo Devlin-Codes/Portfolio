@@ -196,7 +196,7 @@ body {
 
 #projects {
     display: grid;
-    grid-template-rows: 300px 1fr 50px;
+    grid-template-rows: 275px 1fr 75px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     "projects projects projects"
@@ -207,14 +207,13 @@ body {
     background-image: url(Assets/pexels-philippe-donn-1169754.jpg);
     background-size: cover;
     overflow: hidden;
-    align-items: space-around;
     justify-content: space-around;
 }
 
 #projects-title {
     grid-area: projects;
     justify-self: center;
-    font-size: 7vw;
+    font-size: 5vw;
     margin: 100px 0 0;
     color: white;
 }
@@ -257,6 +256,7 @@ body {
     grid-area: container;
     height: auto;
     width: 100%;
+    margin: 0;
 }
 
 #project-links {
@@ -313,4 +313,21 @@ body {
     background: none;
     border: none;
     outline: none;
+}
+
+#carousel-bubbles-container {
+    grid-area: bubbles;
+    height: 50px;
+}
+
+#carousel-bubbles-track {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.fa-circle {
+    color: white;
+    margin: 0 3px;
 }

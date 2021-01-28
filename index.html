@@ -1,79 +1,105 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="reset" href="reset.css">
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
-        <title>Devlin's Portfolio</title>
-    </head>
-    <body>
 
-        <!-- INTRODUCTION SECTION -->
+<head>
+    <link rel="reset" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/18f12a5aa2.js" crossorigin="anonymous"></script>
+    <title>Devlin's Portfolio</title>
+</head>
 
-        <section id="intro">
-            <h1 id="intro-name" class="intro">Devlin Rocha</h1>
-            <h2 id="intro-bio" class="intro">Front-end web developer</h2>
-            <div id="intro-badges">
-                <figure id="intro-html" class="intro-badge">
-                    <figcaption id="intro-html-caption" class="intro-caption">HTML</figcaption>
-                    <img id="into-html-image" class="intro-badge-image" src="Assets/HTML5_512px.svg" alt="HTML 5">
-                </figure>
-                <figure id="intro-css" class="intro-badge">
-                    <figcaption id="intro-css-caption" class="intro-caption">CSS</figcaption>
-                    <img id="intro-css-image" class="intro-badge-image" src="Assets/CSS3_Logo_Updated2.png" alt="CSS 3">
-                </figure>
-                <figure id="intro-javascript" class="intro-badge">
-                    <figcaption id="intro-javascript-caption" class="intro-caption">JavaScript</figcaption>
-                    <img id="intro-javascript-image" class="intro-badge-image" src="Assets/javascript.svg" alt="JavaScript">
-                </figure>
-            </div>
-        </section>
+<body>
 
-        <!-- NAVIGATION BAR -->
+    <!-- INTRODUCTION SECTION -->
 
-        <nav id="nav">
-            <div class="dropdown-background">
-                <span class="arrow"></span>
-            </div>
+    <section id="intro">
+        <h1 id="intro-name" class="intro">Devlin Rocha</h1>
+        <h2 id="intro-bio" class="intro">Front-end web developer</h2>
+        <div id="intro-badges">
+            <figure id="intro-html" class="intro-badge">
+                <figcaption id="intro-html-caption" class="intro-caption">HTML</figcaption>
+                <img id="into-html-image" class="intro-badge-image" src="Assets/HTML5_512px.svg" alt="HTML 5">
+            </figure>
+            <figure id="intro-css" class="intro-badge">
+                <figcaption id="intro-css-caption" class="intro-caption">CSS</figcaption>
+                <img id="intro-css-image" class="intro-badge-image" src="Assets/CSS3_Logo_Updated2.png" alt="CSS 3">
+            </figure>
+            <figure id="intro-javascript" class="intro-badge">
+                <figcaption id="intro-javascript-caption" class="intro-caption">JavaScript</figcaption>
+                <img id="intro-javascript-image" class="intro-badge-image" src="Assets/javascript.svg" alt="JavaScript">
+            </figure>
+        </div>
+    </section>
 
-            <ul class="nav-list">
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-text" href=#>Follow</a>
-                    <ul class="dropdown">
-                        <li><a class="dropdown-content" href="https://www.instagram.com/devlincodes" target="_blank" rel="noopener noreferrer">Instragram</a></li>
-                        <li><a class="dropdown-content" href="https://github.com/Devlin-Codes" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                    </ul>
-                </li>
-                <li id="nav-projects" class="nav-item">
-                    <a class="nav-text" href=#>Projects</a>
-                </li>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-text" href=#>Contact</a>
-                    <ul class="dropdown">
-                        <li><a class="dropdown-content" href="#" target="_blank" rel="noopener noreferrer">Email</a></li>
-                        <li><a class="dropdown-content" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+    <!-- NAVIGATION BAR -->
 
-        <!-- PROJECTS SECTION -->
+    <nav id="nav">
+        <div class="dropdown-background">
+            <span class="arrow"></span>
+        </div>
 
-        <main id="projects">
-            <h2 id="projects-title">Project Gallery</h2>
-            <div id="projects-carousel">
-                <button class="arrow-button"><img id="left-arrow" class="projects-arrows" src="Assets/doubleChevron_left_white.svg"></button>
-                <div id="projects-container">
-                    <div id="project-links">
-                        <a class="project-link project-source" href="https://github.com/Devlin-Codes/Sketch-Paint" target="_blank" rel="noopener noreferrer">Source Code</a>
-                        <a class="project-link project-demo" href="https://devlin-codes.github.io/Sketch-Paint/" target="_blank" rel="noopener noreferrer">Demo</a>
-                    </div>
-                    <iframe id="inline-frame" title="Inline Frame" src="https://devlin-codes.github.io/Sketch-Paint/"></iframe>
+        <ul class="nav-list">
+            <li class="nav-item nav-dropdown">
+                <a class="nav-text" href=#>Follow</a>
+                <ul class="dropdown">
+                    <li><a class="dropdown-content" href="https://www.instagram.com/devlincodes" target="_blank"
+                            rel="noopener noreferrer">Instragram</a></li>
+                    <li><a class="dropdown-content" href="https://github.com/Devlin-Codes" target="_blank"
+                            rel="noopener noreferrer">GitHub</a></li>
+                </ul>
+            </li>
+            <li id="nav-projects" class="nav-item">
+                <a class="nav-text" href=#>Projects</a>
+            </li>
+            <li class="nav-item nav-dropdown">
+                <a class="nav-text" href=#>Contact</a>
+                <ul class="dropdown">
+                    <li><a class="block dropdown-content" href="#" target="_blank" rel="noopener noreferrer">Email</a>
+                    </li>
+                    <li><a class="block dropdown-content" href="#" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- PROJECTS SECTION -->
+
+    <main id="projects">
+        <h2 id="projects-title">Project Gallery</h2>
+        <div id="projects-carousel">
+            <button class="arrow-button"><img id="left-arrow" class="projects-arrows"
+                    src="Assets/doubleChevron_left_white.svg"></button>
+            <div id="projects-container">
+                <div id="project-links">
+                    <a class="project-link project-source" href="https://github.com/Devlin-Codes/Sketch-Paint"
+                        target="_blank" rel="noopener noreferrer">Source Code</a>
+                    <a class="project-link project-demo" href="https://devlin-codes.github.io/Sketch-Paint/"
+                        target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
-                <button class="arrow-button"><img id="right-arrow" class="projects-arrows" src="Assets/doubleChevron_right_white.svg"></button>
-            </div>
-        </main>
-        <script src="scripts.js"></script>
-    </body>
+                <iframe id="inline-frame" title="Inline Frame"
+                    src="https://devlin-codes.github.io/Sketch-Paint/"></iframe>
+                    <div id="carousel-bubbles-container">
+                        <ul id="carousel-bubbles-track">
+                            <li class="carousel-bubble">
+                                <i class="far fa-circle"></i>
+                            </li>
+                            <li class="carousel-bubble">
+                                <i class="far fa-circle"></i>
+                            </li>
+                            <li class="carousel-bubble">
+                                <i class="far fa-circle"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <button class="arrow-button"><img id="right-arrow" class="projects-arrows"
+                    src="Assets/doubleChevron_right_white.svg"></button>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+
 </html>
