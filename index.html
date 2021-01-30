@@ -69,34 +69,43 @@
 
     <main id="projects">
         <h2 id="projects-title">Project Gallery</h2>
-        <div id="projects-carousel">
-            <button class="arrow-button"><img id="left-arrow" class="projects-arrows"
-                    src="Assets/doubleChevron_left_white.svg"></button>
+        <div id="carousel-container">
+            <button id="left-arrow" class="arrow-button">
+                <img class="carousel-arrow" src="Assets/doubleChevron_left_white.svg">
+            </button>
+            
+            <div id="project-links">
+                <a class="project-link project-source" href="https://github.com/Devlin-Codes/Sketch-Paint" target="_blank" rel="noopener noreferrer">Source Code</a>
+                <a class="project-link project-demo" href="https://devlin-codes.github.io/Sketch-Paint/" target="_blank" rel="noopener noreferrer">Demo</a>
+            </div>
+
             <div id="projects-container">
-                <div id="project-links">
-                    <a class="project-link project-source" href="https://github.com/Devlin-Codes/Sketch-Paint"
-                        target="_blank" rel="noopener noreferrer">Source Code</a>
-                    <a class="project-link project-demo" href="https://devlin-codes.github.io/Sketch-Paint/"
-                        target="_blank" rel="noopener noreferrer">Demo</a>
-                </div>
-                <iframe id="inline-frame" title="Inline Frame"
-                    src="https://devlin-codes.github.io/Sketch-Paint/"></iframe>
-                    <div id="carousel-bubbles-container">
-                        <ul id="carousel-bubbles-track">
-                            <li class="carousel-bubble">
-                                <i class="far fa-circle"></i>
-                            </li>
-                            <li class="carousel-bubble">
-                                <i class="far fa-circle"></i>
-                            </li>
-                            <li class="carousel-bubble">
-                                <i class="far fa-circle"></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            <button class="arrow-button"><img id="right-arrow" class="projects-arrows"
-                    src="Assets/doubleChevron_right_white.svg"></button>
+                <ul id="carousel-track">
+                    <li class="carousel-slide">
+                        <iframe id="sketch-paint" class="project" title="Sketch Paint" src="https://devlin-codes.github.io/Sketch-Paint/"></iframe>
+                    </li>
+                    <li class="carousel-slide">
+                        <iframe id="calculator" class="project" title="Calculator" src="https://devlin-codes.github.io/Calculator/"></iframe>
+                    </li>
+                    <li class="carousel-slide">
+                        <iframe id="rock-paper-scissors" class="project" title="Rock Paper Scissors" src="https://devlin-codes.github.io/Rock-Paper-Scissors/"></iframe>
+                    </li>
+                    <li class="carousel-slide">
+                        <iframe id="google-recreation" class="project" title="Google Recreation" src="https://devlin-codes.github.io/Google-Homepage/"></iframe>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div id="bubbles-container">
+                <button class="bubble current-slide"></button>
+                <button class="bubble"></button>
+                <button class="bubble"></button>
+            </div>
+
+            <button id="right-arrow" class="arrow-button">
+                <img class="carousel-arrow" src="Assets/doubleChevron_right_white.svg">
+            </button>
         </div>
     </main>
     <script src="scripts.js"></script>
