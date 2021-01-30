@@ -78,6 +78,117 @@ function scroll(e) {
     };
 };
 
+// CAROUSEL:
+
+const track = document.querySelector('#carousel-track');
+const slides = Array.from(track.children);
+const leftArrow = document.querySelector('#left-arrow'); // prevButton
+const rightArrow = document.querySelector('#right-arrow'); // nextButton
+const bubblesContainer = document.querySelector('#bubbles-container'); // dotsNav
+const bubbles = Array.from(bubblesContainer.children); // dots
+
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+// Arrange the slides next to each other
+const setSlidePosition = (slide,index) => {
+    slide.style.left = slideWidth * index + 'px';
+};
+slides.forEach(setSlidePosition);
+
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');
+};
+
+const updateBubbles = (currentBubble, targetBubble) => {
+    currentBubble.classList.remove('current-slide');
+    targetBubble.classList.add('current-slide');
+};
+
+const hideShowArrows = (slides, leftArrow, rightArrow, targetIndex) => {
+    if (targetIndex === 0) {
+        leftArrow.classList.add('is-hidden');
+        rightArrow.classList.remove('is-hidden');
+    } else if (targetIndex === slides.length - 1) {
+        leftArrow.classList.remove('is-hidden');
+        rightArrow.classList.add('is-hidden');
+    } else {
+        leftArrow.classList.remove('is-hidden');
+        rightArrow.classList.remove('is-hidden');
+    };
+};
+
+const updateLinks = (slideIndex) => {
+    const projectSource = document.querySelector('#project-source');
+    const projectDemo = document.querySelector('#project-demo');
+    switch (true) {
+        case (slideIndex === 0):
+            projectSource.href = "https://github.com/Devlin-Codes/Sketch-Paint";
+            projectDemo.href = "https://devlin-codes.github.io/Sketch-Paint/";
+            break;
+        case (slideIndex === 1):
+            projectSource.href = "https://github.com/Devlin-Codes/Calculator";
+            projectDemo.href = "https://devlin-codes.github.io/Calculator/";
+            break;
+        case (slideIndex === 2):
+            projectSource.href = "https://github.com/Devlin-Codes/Rock-Paper-Scissors";
+            projectDemo.href = "https://devlin-codes.github.io/Rock-Paper-Scissors/";
+            break;
+        case (slideIndex === 3):
+            projectSource.href = "https://github.com/Devlin-Codes/Google-Homepage";
+            projectDemo.href = "https://devlin-codes.github.io/Google-Homepage/";
+            break;
+    };
+};
+
+// When I click left, move slides to the left
+
+leftArrow.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.current-slide');
+    const prevSlide = currentSlide.previousElementSibling;
+    const currentBubble = bubblesContainer.querySelector('.current-slide');
+    const prevBubble = currentBubble.previousElementSibling;
+    const prevIndex = slides.findIndex(slide => slide === prevSlide);
+
+    moveToSlide(track, currentSlide, prevSlide);
+    updateBubbles(currentBubble, prevBubble);
+    hideShowArrows(slides, leftArrow, rightArrow, prevIndex);
+    updateLinks(prevIndex);
+});
+
+// When I click right, move slides to the right
+rightArrow.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.current-slide');
+    const nextSlide = currentSlide.nextElementSibling;
+    const currentBubble = bubblesContainer.querySelector('.current-slide');
+    const nextBubble = currentBubble.nextElementSibling;
+    const nextIndex = slides.findIndex(slide => slide === nextSlide);
+
+    moveToSlide(track, currentSlide, nextSlide);
+    updateBubbles(currentBubble, nextBubble);
+    hideShowArrows(slides, leftArrow, rightArrow, nextIndex);
+    updateLinks(nextIndex);
+});
+
+// When I click a carousel bubble, move to that slide
+bubblesContainer.addEventListener('click', e => {
+    const targetBubble = e.target.closest('button');
+
+    if (!targetBubble) return;
+
+    const currentSlide = track.querySelector('.current-slide');
+    const currentBubble = bubblesContainer.querySelector('.current-slide');
+    const targetIndex = bubbles.findIndex(bubble => bubble === targetBubble);
+    const targetSlide = slides[targetIndex];
+
+    moveToSlide(track, currentSlide, targetSlide);
+    updateBubbles(currentBubble, targetBubble);
+    hideShowArrows(slides, leftArrow, rightArrow, targetIndex);
+    updateLinks(targetIndex);
+});
+
+
 // EVENTS:
 
 document.addEventListener('DOMContentLoaded', findNav);

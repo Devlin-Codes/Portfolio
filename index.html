@@ -70,18 +70,18 @@
     <main id="projects">
         <h2 id="projects-title">Project Gallery</h2>
         <div id="carousel-container">
-            <button id="left-arrow" class="arrow-button">
+            <button id="left-arrow" class="arrow-button is-hidden">
                 <img class="carousel-arrow" src="Assets/doubleChevron_left_white.svg">
             </button>
             
             <div id="project-links">
-                <a class="project-link project-source" href="https://github.com/Devlin-Codes/Sketch-Paint" target="_blank" rel="noopener noreferrer">Source Code</a>
-                <a class="project-link project-demo" href="https://devlin-codes.github.io/Sketch-Paint/" target="_blank" rel="noopener noreferrer">Demo</a>
+                <a id="project-source" class="project-link" href="https://github.com/Devlin-Codes/Sketch-Paint" target="_blank" rel="noopener noreferrer">Source Code</a>
+                <a id="project-demo" class="project-link" href="https://devlin-codes.github.io/Sketch-Paint/" target="_blank" rel="noopener noreferrer">Demo</a>
             </div>
 
             <div id="projects-container">
                 <ul id="carousel-track">
-                    <li class="carousel-slide">
+                    <li class="carousel-slide current-slide">
                         <iframe id="sketch-paint" class="project" title="Sketch Paint" src="https://devlin-codes.github.io/Sketch-Paint/"></iframe>
                     </li>
                     <li class="carousel-slide">
@@ -99,6 +99,7 @@
 
             <div id="bubbles-container">
                 <button class="bubble current-slide"></button>
+                <button class="bubble"></button>
                 <button class="bubble"></button>
                 <button class="bubble"></button>
             </div>

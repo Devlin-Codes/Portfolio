@@ -5,6 +5,7 @@ html {
     background-color: black;
     font-family: 'Oswald', sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 * > {
@@ -92,6 +93,9 @@ body {
     width: 100%;
     border-top: 2px solid purple;
     border-bottom: 2px solid purple;
+    background: purple;
+    background-image: url(Assets/pexels-felix-mittermeier-956999.jpg);
+    background-image: url(Assets/pexels-philippe-donn-1169754.jpg);
     background-image: url(Assets/pexels-pixabay-355288.jpg);
     background-size: cover;
 }
@@ -279,9 +283,9 @@ body {
     height: auto;
     width: 100%;
     margin: 0;
-    background: lightgreen;
+    background: white;
     height: 100%;
-    position: relative;
+    overflow: hidden;
 }
 
 #carousel-track {
@@ -291,12 +295,12 @@ body {
     margin: 0;
     list-style: none;
     position: relative;
+    transition: transform 250ms ease-in;
 }
 
 .carousel-slide {
     height: 100%;
     width: 100%;
-    border: 3px solid purple;
     background: white;
     position: absolute;
     top: 0;
@@ -325,8 +329,11 @@ body {
     height: 15px;
     background: rgba(255,255,255,0.3);
     margin: 0 5px;
+    cursor: pointer;
 }
 
 .current-slide {
     background: rgba(255,255,255,0.75);
 }
+
+.is-hidden { display: none; }
