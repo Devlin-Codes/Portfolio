@@ -1,92 +1,114 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="reset" href="reset.css">
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
-        <title>Devlin's Portfolio</title>
-    </head>
-    <body>
 
-        <!-- INTRODUCTION SECTION -->
+<head>
+    <link rel="reset" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/18f12a5aa2.js" crossorigin="anonymous"></script>
+    <title>Devlin's Portfolio</title>
+</head>
 
-        <section id="intro">
-            <h1 id="intro-name" class="intro">Devlin Rocha</h1>
-            <h2 id="intro-bio" class="intro">Front-end web developer</h2>
-            <div id="intro-badges">
-                <figure id="intro-html" class="intro-badge">
-                    <figcaption id="intro-html-caption" class="intro-caption">HTML</figcaption>
-                    <img id="into-html-image" class="intro-badge-image" src="Assets/HTML5_512px.svg" alt="HTML 5">
-                </figure>
-                <figure id="intro-css" class="intro-badge">
-                    <figcaption id="intro-css-caption" class="intro-caption">CSS</figcaption>
-                    <img id="intro-css-image" class="intro-badge-image" src="Assets/CSS3_Logo_Updated2.png" alt="CSS 3">
-                </figure>
-                <figure id="intro-javascript" class="intro-badge">
-                    <figcaption id="intro-javascript-caption" class="intro-caption">JavaScript</figcaption>
-                    <img id="intro-javascript-image" class="intro-badge-image" src="Assets/javascript.svg" alt="JavaScript">
-                </figure>
+<body>
+
+    <!-- INTRODUCTION SECTION -->
+
+    <section id="intro">
+        <h1 id="intro-name" class="intro">Devlin Rocha</h1>
+        <h2 id="intro-bio" class="intro">Front-end web developer</h2>
+        <div id="intro-badges">
+            <figure id="intro-html" class="intro-badge">
+                <figcaption id="intro-html-caption" class="intro-caption">HTML</figcaption>
+                <img id="into-html-image" class="intro-badge-image" src="Assets/HTML5_512px.svg" alt="HTML 5">
+            </figure>
+            <figure id="intro-css" class="intro-badge">
+                <figcaption id="intro-css-caption" class="intro-caption">CSS</figcaption>
+                <img id="intro-css-image" class="intro-badge-image" src="Assets/CSS3_Logo_Updated2.png" alt="CSS 3">
+            </figure>
+            <figure id="intro-javascript" class="intro-badge">
+                <figcaption id="intro-javascript-caption" class="intro-caption">JavaScript</figcaption>
+                <img id="intro-javascript-image" class="intro-badge-image" src="Assets/javascript.svg" alt="JavaScript">
+            </figure>
+        </div>
+    </section>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav id="nav">
+        <div class="dropdown-background">
+            <span class="arrow"></span>
+        </div>
+
+        <ul class="nav-list">
+            <li class="nav-item nav-dropdown">
+                <a class="nav-text" href=#>Follow</a>
+                <ul class="dropdown">
+                    <li><a class="dropdown-content" href="https://www.instagram.com/devlincodes" target="_blank"
+                            rel="noopener noreferrer">Instragram</a></li>
+                    <li><a class="dropdown-content" href="https://github.com/Devlin-Codes" target="_blank"
+                            rel="noopener noreferrer">GitHub</a></li>
+                </ul>
+            </li>
+            <li id="nav-projects" class="nav-item">
+                <a class="nav-text" href=#>Projects</a>
+            </li>
+            <li class="nav-item nav-dropdown">
+                <a class="nav-text" href=#>Contact</a>
+                <ul class="dropdown">
+                    <li><a class="block dropdown-content" href="#" target="_blank" rel="noopener noreferrer">Email</a>
+                    </li>
+                    <li><a class="block dropdown-content" href="#" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- PROJECTS SECTION -->
+
+    <main id="projects">
+        <h2 id="projects-title">Project Gallery</h2>
+        <div id="carousel-container">
+            <button id="left-arrow" class="arrow-button">
+                <img class="carousel-arrow" src="Assets/doubleChevron_left_white.svg">
+            </button>
+            
+            <div id="project-links">
+                <a class="project-link project-source" href="https://github.com/Devlin-Codes/Sketch-Paint" target="_blank" rel="noopener noreferrer">Source Code</a>
+                <a class="project-link project-demo" href="https://devlin-codes.github.io/Sketch-Paint/" target="_blank" rel="noopener noreferrer">Demo</a>
             </div>
-        </section>
 
-        <!-- NAVIGATION BAR -->
+            <div id="projects-container">
+                <ul id="carousel-track">
+                    <li class="carousel-slide">
+                        <iframe id="sketch-paint" class="project" title="Sketch Paint" src="https://devlin-codes.github.io/Sketch-Paint/"></iframe>
+                    </li>
+                    <li class="carousel-slide">
+                        <iframe id="calculator" class="project" title="Calculator" src="https://devlin-codes.github.io/Calculator/"></iframe>
+                    </li>
+                    <li class="carousel-slide">
+                        <iframe id="rock-paper-scissors" class="project" title="Rock Paper Scissors" src="https://devlin-codes.github.io/Rock-Paper-Scissors/"></iframe>
+                    </li>
+                    <li class="carousel-slide">
+                        <iframe id="google-recreation" class="project" title="Google Recreation" src="https://devlin-codes.github.io/Google-Homepage/"></iframe>
+                    </li>
+                </ul>
 
-        <nav id="nav">
-            <div class="dropdown-background">
-                <span class="arrow"></span>
             </div>
 
-            <ul class="nav-list">
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-text" href=#>Follow</a>
-                    <ul class="dropdown">
-                        <li><a class="dropdown-content" href="https://www.instagram.com/devlincodes" target="_blank" rel="noopener noreferrer">Instragram</a></li>
-                        <li><a class="dropdown-content" href="https://github.com/Devlin-Codes" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                    </ul>
-                </li>
-                <li id="nav-projects" class="nav-item">
-                    <a class="nav-text" href=#>Projects</a>
-                </li>
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-text" href=#>Contact</a>
-                    <ul class="dropdown">
-                        <li><a class="dropdown-content" href="#" target="_blank" rel="noopener noreferrer">Email</a></li>
-                        <li><a class="dropdown-content" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+            <div id="bubbles-container">
+                <button class="bubble current-slide"></button>
+                <button class="bubble"></button>
+                <button class="bubble"></button>
+            </div>
 
-        <!-- PROJECTS SECTION -->
+            <button id="right-arrow" class="arrow-button">
+                <img class="carousel-arrow" src="Assets/doubleChevron_right_white.svg">
+            </button>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
 
-        <main id="projects">
-            <h2 id="projects-title">Projects</h2>
-            <figure id=sketch-paint class="project">
-                <figcaption class="project-caption">Sketch Paint</figcaption>
-                <a href="https://devlin-codes.github.io/Sketch-Paint/" target="_blank" rel="noopener noreferrer">
-                    <img id="sketch-paint-image" class="project-image" src="Assets/Sketch_Paint[1].png">
-                </a>
-            </figure>
-            <figure id="calculator" class="project">
-                <figcaption class="project-caption">Calculator</figcaption>
-                <a href="https://devlin-codes.github.io/Calculator/" target="_blank" rel="noopener noreferrer">
-                    <img id="calculator-image" class="project-image" src="Assets/calculator_preview[3].png">
-                </a>
-            </figure>
-            <figure id="rock-paper-scissors" class="project">
-                <figcaption class="project-caption">Rock Paper Scissors</figcaption>
-                <a href="https://devlin-codes.github.io/Rock-Paper-Scissors/" target="_blank" rel="noopener noreferrer">
-                    <img id="rock-paper-scissors-image" class="project-image" src="Assets/rock-paper-scissors[1].png">
-                </a>
-            </figure>
-            <figure id="google-recreation" class="project">
-                <figcaption class="project-caption">Google Recreation</figcaption>
-                <a href="https://devlin-codes.github.io/Google-Homepage/" target="_blank" rel="noopener noreferrer">
-                    <img id="google-recreation-image" class="project-image" src="Assets/Google[1].png">
-                </a>
-            </figure>
-        </main>
-        <script src="scripts.js"></script>
-    </body>
 </html>
