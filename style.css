@@ -86,14 +86,12 @@ body {
 /* Nav */
 
 #nav {
-    position: fixed;
-    bottom: 0;
     display: flex;
     height: 50px;
     width: 100%;
+    bottom: 0;
     border-top: 2px solid purple;
     border-bottom: 2px solid purple;
-    background: purple;
     background-image: url(Assets/pexels-felix-mittermeier-956999.jpg);
     background-image: url(Assets/pexels-philippe-donn-1169754.jpg);
     background-image: url(Assets/pexels-pixabay-355288.jpg);
@@ -119,7 +117,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 25px;
+    padding: 10px;
     text-decoration: none;
     width: 100px;
 }
@@ -250,6 +248,12 @@ body {
     text-decoration: none;
     border: 1px solid white;
     height: 30px;
+}
+
+#project-title {
+    color: white;
+    width: 150px;
+    text-align: center;
 }
 
 .arrow-button {

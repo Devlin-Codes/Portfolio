@@ -6,6 +6,7 @@ const triggers = document.querySelectorAll('.nav-dropdown');
 const dropdownBackground = document.querySelector('.dropdown-background');
 const navDropdown = document.querySelectorAll('.nav-dropdown');
 const projectsButton = document.querySelector('#nav-projects');
+const projects = document.querySelector('#projects');
 
 let topOfNav;
 
@@ -18,18 +19,21 @@ function prevent(e) {
 // NAV FUNCTIONS:
 
 function findNav() {
-    topOfNav = nav.offsetTop;
+    //topOfNav = nav.offsetTop;
+    intro.style.height = window.innerHeight - 54 + 'px';
+    projects.style.height = window.innerHeight - 54 + 'px';
 };
 
 function fixNav() {
-    if (window.scrollY >= topOfNav) {
+    //topOfNav = nav.offsetTop;
+    if (window.scrollY >= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
         //document.body.style.paddingTop = nav.offsetHeight + 'px';
-        document.body.classList.add('fixed-nav');
+        //document.body.classList.add('fixed-nav');
         projectsButton.firstChild.nextElementSibling.textContent = 'About Me';
     } else {
-        nav.style.bottom = window.scrollY + 'px';
-        document.body.style.paddingTop = 0;
-        document.body.classList.remove('fixed-nav');
+        //nav.style.bottom = window.scrollY + 'px';
+        //document.body.style.paddingTop = 0;
+        //document.body.classList.remove('fixed-nav');
         projectsButton.firstChild.nextElementSibling.textContent = 'Projects';
     };
 };
@@ -121,23 +125,29 @@ const hideShowArrows = (slides, leftArrow, rightArrow, targetIndex) => {
 
 const updateLinks = (slideIndex) => {
     const projectSource = document.querySelector('#project-source');
+    const projectTitle = document.querySelector('#project-title');
     const projectDemo = document.querySelector('#project-demo');
+    console.log(projectTitle);
     switch (true) {
         case (slideIndex === 0):
             projectSource.href = "https://github.com/Devlin-Codes/Sketch-Paint";
             projectDemo.href = "https://devlin-codes.github.io/Sketch-Paint/";
+            projectTitle.textContent = "Sketch Paint";
             break;
         case (slideIndex === 1):
             projectSource.href = "https://github.com/Devlin-Codes/Calculator";
             projectDemo.href = "https://devlin-codes.github.io/Calculator/";
+            projectTitle.textContent = "Calculator";
             break;
         case (slideIndex === 2):
             projectSource.href = "https://github.com/Devlin-Codes/Rock-Paper-Scissors";
             projectDemo.href = "https://devlin-codes.github.io/Rock-Paper-Scissors/";
+            projectTitle.textContent = "Rock Paper Scissors";
             break;
         case (slideIndex === 3):
             projectSource.href = "https://github.com/Devlin-Codes/Google-Homepage";
             projectDemo.href = "https://devlin-codes.github.io/Google-Homepage/";
+            projectTitle.textContent = "Google Recreation";
             break;
     };
 };
@@ -158,6 +168,7 @@ leftArrow.addEventListener('click', e => {
 });
 
 // When I click right, move slides to the right
+
 rightArrow.addEventListener('click', e => {
     const currentSlide = track.querySelector('.current-slide');
     const nextSlide = currentSlide.nextElementSibling;
@@ -172,6 +183,7 @@ rightArrow.addEventListener('click', e => {
 });
 
 // When I click a carousel bubble, move to that slide
+
 bubblesContainer.addEventListener('click', e => {
     const targetBubble = e.target.closest('button');
 
