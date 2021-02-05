@@ -19,14 +19,14 @@ function prevent(e) {
 // NAV FUNCTIONS:
 
 function findNav() {
-    //topOfNav = nav.offsetTop;
-    intro.style.height = window.innerHeight - 54 + 'px';
-    projects.style.height = window.innerHeight - 54 + 'px';
+    topOfNav = nav.offsetTop;
+    intro.style.height = window.innerHeight - nav.offsetHeight + 'px';
+    projects.style.height = window.innerHeight - nav.offsetHeight + 'px';
 };
 
 function fixNav() {
     //topOfNav = nav.offsetTop;
-    if (window.scrollY >= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+    if (window.scrollY >= window.innerHeight / 2) {
         //document.body.style.paddingTop = nav.offsetHeight + 'px';
         //document.body.classList.add('fixed-nav');
         projectsButton.firstChild.nextElementSibling.textContent = 'About Me';
@@ -40,7 +40,7 @@ function fixNav() {
 
 function handleEnter(e) {
     e.preventDefault();
-    console.log(this)
+    console.log(this);
     this.classList.add('trigger-enter');
     setTimeout(() => {
         if (this.classList.contains('trigger-enter')) {
@@ -50,10 +50,9 @@ function handleEnter(e) {
     dropdownBackground.classList.add('open');
     
     const dropdown = this.querySelector('.dropdown');
-    console.log(dropdown)
+    const arrow = document.querySelector('#dropdown-arrow');
     const dropdownCoords = dropdown.getBoundingClientRect();
     const navCoords = nav.getBoundingClientRect();
-    console.log(dropdownCoords)
     
     const coords = {
         height: dropdownCoords.height,
@@ -61,11 +60,21 @@ function handleEnter(e) {
         top: dropdownCoords.top - navCoords.top,
         left: dropdownCoords.left - navCoords.left,
     };
-    console.log(dropdownBackground)
-    console.log(coords)
+
     dropdownBackground.style.setProperty('width', `${coords.width}px`);
     dropdownBackground.style.setProperty('height', `${coords.height}px`);
-    dropdownBackground.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+    console.log(dropdown)
+
+    if (window.scrollY > window.innerHeight / 4) {
+        dropdownBackground.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+        dropdown.style.transform = 'translateY(200%)';
+        console.log('this')
+        arrow.style.transform = 'translateY(-50%) rotate(45deg)';
+    } else {
+        dropdownBackground.style.setProperty('transform', `translate(${coords.left}px, -${coords.top}px)`);
+        dropdown.style.transform = 'translateY(-125%)';
+        arrow.style.transform = 'translateY(200%) rotate(45deg)';
+    };
 };
 
 function handleLeave() {
@@ -75,7 +84,7 @@ function handleLeave() {
 
 function scroll(e) {
     e.preventDefault();
-    if (window.scrollY < topOfNav) {
+    if (window.scrollY < window.innerHeight / 2) {
         document.documentElement.scrollTop = topOfNav;
     } else {
         document.documentElement.scrollTop = 0;
@@ -149,6 +158,10 @@ const updateLinks = (slideIndex) => {
             projectDemo.href = "https://devlin-codes.github.io/Google-Homepage/";
             projectTitle.textContent = "Google Recreation";
             break;
+        case (slideIndex === 4):
+            projectSource.href = "https://github.com/Devlin-Codes/Tribute-Page-Project";
+            projectDemo.href = "https://devlin-codes.github.io/Tribute-Page-Project/";
+            projectTitle.textContent = "Tribute Replica";
     };
 };
 
@@ -193,6 +206,7 @@ bubblesContainer.addEventListener('click', e => {
     const currentBubble = bubblesContainer.querySelector('.current-slide');
     const targetIndex = bubbles.findIndex(bubble => bubble === targetBubble);
     const targetSlide = slides[targetIndex];
+    console.log(targetSlide)
 
     moveToSlide(track, currentSlide, targetSlide);
     updateBubbles(currentBubble, targetBubble);
@@ -200,8 +214,24 @@ bubblesContainer.addEventListener('click', e => {
     updateLinks(targetIndex);
 });
 
-
+function autoplay() {
+    //autoplayToggle = 1;
+    while (autoplayToggle) {
+        setTimeout(() => {
+            const currentSlide = track.querySelector('.current-slide');
+            const nextSlide = currentSlide.nextElementSibling;
+            if (!nextSlide) {
+                const targetSlide = slides[0];
+                moveToSlide(track, currentSlide, targetSlide);
+            } else {
+                moveToSlide(track, currentSlide, nextSlide);
+            };
+        }, 3000);
+    };
+};
+    
 // EVENTS:
+document.addEventListener('DOMContentLoaded', autoplay);
 
 document.addEventListener('DOMContentLoaded', findNav);
 window.addEventListener('scroll', fixNav);
@@ -214,3 +244,6 @@ projectsButton.addEventListener('click', scroll);
 block = document.querySelectorAll('.block');
 
 block.forEach(navButton => navButton.addEventListener('click', prevent));
+
+// ADD RESIZE EVENT FOR OTHER FUNCTION RESIZING
+// CHECK ON AUTOPLAY FUNCTION
