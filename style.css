@@ -120,7 +120,8 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     width: 100px;
 }
@@ -134,6 +135,7 @@ body {
     background-color: black;
     padding: 5px 7px;
     border: 1px solid white;
+    pointer-events: none;
 }
 
 .fixed-nav nav {
@@ -217,17 +219,17 @@ body {
     grid-area: projects;
     justify-self: center;
     font-size: 5vw;
-    margin: 100px 0 25px;
+    margin: 25px 0 50px;
     color: white;
     background: black;
-    padding: 0 10px;
+    padding: 0;
 }
 
 #carousel-container {
     grid-area: carousel;
     display: grid;
     grid-template-rows: 50px 1fr 50px;
-    grid-template-columns: 100px 1fr 100px;
+    grid-template-columns: 10vw 1fr 10vw;
     grid-template-areas:
     ". links ."
     "left-arrow container right-arrow"
@@ -238,22 +240,35 @@ body {
     margin: 0 auto;
 }
 
-#project-links {
+#project-info {
     grid-area: links;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: black;
     border: 1px solid white;
-    padding: 5px 7px;
+    padding: 0;
+    width: 100%;
+}
+
+#info-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .project-link {
     color: white;
-    padding: 0 10px;
+    padding: 2px 10px;
     text-decoration: none;
     border: 1px solid white;
     height: 30px;
+    width: 50px;
+    text-align: center;
+    align-self: center;
 }
 
 #project-title {
@@ -267,6 +282,8 @@ body {
     border: none;
     outline: none;
     width: 200px;
+    padding: 0;
+    margin: 0;
 }
 
 .carousel-arrow {
