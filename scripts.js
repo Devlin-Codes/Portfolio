@@ -40,7 +40,6 @@ function fixNav() {
 
 function handleEnter(e) {
     e.preventDefault();
-    console.log(this);
     this.classList.add('trigger-enter');
     setTimeout(() => {
         if (this.classList.contains('trigger-enter')) {
@@ -63,12 +62,10 @@ function handleEnter(e) {
 
     dropdownBackground.style.setProperty('width', `${coords.width}px`);
     dropdownBackground.style.setProperty('height', `${coords.height}px`);
-    console.log(dropdown)
 
     if (window.scrollY > window.innerHeight / 4) {
         dropdownBackground.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
         dropdown.style.transform = 'translateY(200%)';
-        console.log('this')
         arrow.style.transform = 'translateY(-50%) rotate(45deg)';
     } else {
         dropdownBackground.style.setProperty('transform', `translate(${coords.left}px, -${coords.top}px)`);
@@ -136,7 +133,6 @@ const updateLinks = (slideIndex) => {
     const projectSource = document.querySelector('#project-source');
     const projectTitle = document.querySelector('#project-title');
     const projectDemo = document.querySelector('#project-demo');
-    console.log(projectTitle);
     switch (true) {
         case (slideIndex === 0):
             projectSource.href = "https://github.com/Devlin-Codes/Sketch-Paint";
@@ -206,7 +202,6 @@ bubblesContainer.addEventListener('click', e => {
     const currentBubble = bubblesContainer.querySelector('.current-slide');
     const targetIndex = bubbles.findIndex(bubble => bubble === targetBubble);
     const targetSlide = slides[targetIndex];
-    console.log(targetSlide)
 
     moveToSlide(track, currentSlide, targetSlide);
     updateBubbles(currentBubble, targetBubble);
