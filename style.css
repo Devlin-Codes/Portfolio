@@ -25,7 +25,8 @@ body {
 /* Intro Page */
 
 #intro {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
     grid-template-rows: auto;
@@ -38,26 +39,57 @@ body {
     background-image: none;
     background-size: cover;
     justify-content: center;
+    align-content: center;
 }
 
 #intro-name {
     grid-area: name;
-    font-size: 7vw;
+    font-size: 12vw;
     color: white;
     text-align: center;
     height: 100%;
     width: 100%;
-    margin: 100px 0 0;
+    margin: 20vh 0 0;
+    justify-content: center;
 }
 
 #intro-bio {
     grid-area: bio;
-    font-size: 5vw;
+    font-size: 9vw;
     color: white;
     text-align: center;
     height: 100%;
     width: 100%;
-    margin: 0;
+    margin: 0 0 20vh;
+}
+
+@media only screen and (min-width: 720px) {
+    #intro {
+        background: blue;
+    }
+
+
+    #intro-name {
+        font-size: 10vw;
+    }
+
+    #intro-bio {
+        font-size: 8vw;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #intro {
+        background: red;
+    }
+
+    #intro-name {
+        font-size: 100px;
+    }
+
+    #intro-bio {
+        font-size: 75px;
+    }
 }
 
 #intro-badges {
