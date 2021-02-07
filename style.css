@@ -92,6 +92,18 @@ body {
     }
 }
 
+@media only screen and (orientation: portrait) {
+    #intro {
+        background: green;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    #intro {
+        background: yellow;
+    }
+}
+
 #intro-badges {
     grid-area: badges;
     display: flex;
