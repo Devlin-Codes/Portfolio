@@ -242,3 +242,5 @@ block.forEach(navButton => navButton.addEventListener('click', prevent));
 
 // ADD RESIZE EVENT FOR OTHER FUNCTION RESIZING
 // CHECK ON AUTOPLAY FUNCTION
+
+// WHEN WINDOW CHANGES SIZE RELOAD DOM CONTENT
