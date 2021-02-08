@@ -264,6 +264,8 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
+    max-height: 100%;
+    max-width: 100%;
     background-image: url(Assets/pexels-philippe-donn-1169754.jpg);
     background: none;
     background-size: cover;
