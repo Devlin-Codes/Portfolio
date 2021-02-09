@@ -63,55 +63,9 @@ body {
     margin: 0 0 20vh;
 }
 
-@media only screen and (min-width: 720px) {
-    #intro {
-        background: blue;
-    }
-
-
-    #intro-name {
-        font-size: 10vw;
-    }
-
+@media only screen and (hover: none) and (pointer: coarse) {
     #intro-bio {
-        font-size: 8vw;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    #intro {
         background: red;
-    }
-    
-    #intro-name {
-        font-size: 7vw;
-    }
-
-    #intro-bio {
-        font-size: 5vw;
-    }
-}
-
-@media only screen and (orientation: portrait) {
-    #intro {
-    }
-    
-    #intro-name {
-        font-size: 12vw;
-        background: green;
-    }
-
-    #intro-bio {
-        font-size: 9vw;
-    }
-}
-
-@media only screen and (orientation: landscape) {
-    #intro {
-    }
-    
-    #intro-name {
-        background: yellow;
     }
 }
 
