@@ -2,11 +2,14 @@ html {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    font-size: 16px;
     background-color: black;
     font-family: 'Oswald', sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
     touch-action: manipulation;
+    margin: 0;
+    padding: 0;
 }
 
 * > {
@@ -29,12 +32,6 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    grid-template-areas:
-    "name name name"
-    "bio bio bio"
-    "badges badges badges";
     background-image: url(Assets/pexels-felix-mittermeier-956999.jpg);
     background-image: none;
     background-size: cover;
@@ -44,29 +41,29 @@ body {
 
 #intro-name {
     grid-area: name;
-    font-size: 12vw;
+    display: flex;
+    font-size: 12rem;
     color: white;
     text-align: center;
     height: 100%;
     width: 100%;
-    margin: 20vh 0 0;
     justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+}
+
+#my-name {
+    cursor: pointer;
 }
 
 #intro-bio {
     grid-area: bio;
-    font-size: 9vw;
+    font-size: 4rem;
     color: white;
     text-align: center;
     height: 100%;
     width: 100%;
-    margin: 0 0 20vh;
-}
-
-@media only screen and (hover: none) and (pointer: coarse) {
-    #intro-bio {
-        background: red;
-    }
+    margin: 0;
 }
 
 #intro-badges {
@@ -75,7 +72,7 @@ body {
     height: 100%;
     width: 100vw;
     justify-content: space-around;
-    margin: 0 0 100px;
+    margin: 0;
 }
 
 .intro-badge {
@@ -90,15 +87,49 @@ body {
 
 .intro-caption {
     align-self: center;
-    font-size: 3vw;
+    font-size: 3rem;
     color: white;
+}
+
+/* ABOUT ME */
+
+.about {
+    color: white;
+    font-size: 7rem;
+    margin: 0;
+    display: none;
+}
+
+.about-active {
+}
+
+.about-active #intro-name {
+
+}
+
+.about-active #into-bio {
+    
+}
+
+#about-hello {
+    margin: 50px 0 0 50px;
+}
+
+#about-i-am {
+}
+
+#about-location {
+}
+
+.about-active .about {
+    display: inline-block;
 }
 
 /* Nav */
 
 #nav {
     display: flex;
-    height: 50px;
+    height: 69px;
     width: 100%;
     bottom: 0;
     border-top: 2px solid white;
@@ -135,10 +166,14 @@ body {
     width: 100px;
 }
 
+#nav-projects {
+    cursor: pointer;
+}
+
 .nav-text {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
     display: inline-block;
     align-self: center;
     background-color: black;
@@ -188,6 +223,8 @@ body {
     display: flex;
     justify-content: center;
     opacity: 0;
+    background: black;
+    border: 1px solid white;
 }
 
 .dropdown-background.open {
@@ -199,14 +236,16 @@ body {
     width: 20px;
     height: 20px;
     display: block;
-    background: white;
+    background: black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
     transform: translateY(-50%) rotate(45deg);
 }
 
 .dropdown-content {
     text-decoration: none;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-size: 16rem;
 }
 
 /* Projects Page */
@@ -229,7 +268,7 @@ body {
 #projects-title {
     grid-area: projects;
     justify-self: center;
-    font-size: 5vw;
+    font-size: 5rem;
     margin: 25px 0 50px;
     color: white;
     background: black;
@@ -248,7 +287,7 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
-    margin: 0 auto;
+    margin: 0;
 }
 
 #project-info {
@@ -265,10 +304,25 @@ body {
 #info-list {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
+    align-items: center;
+}
+
+.info-item {
+    width: 100%;
+    text-align: center;
+}
+
+#project-title-container {
+    height: 100%;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-link {
@@ -378,3 +432,9 @@ body {
 }
 
 .is-hidden { display: none; }
+
+@media only screen and (hover: none) and (pointer: coarse) {
+    #intro {
+        background: gray;
+    }
+}
