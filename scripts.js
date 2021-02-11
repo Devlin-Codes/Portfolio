@@ -1,6 +1,7 @@
 // VARIABLES:
 
 const intro = document.querySelector('#intro');
+const myName = document.querySelector('#my-name');
 const nav = document.querySelector('#nav');
 const triggers = document.querySelectorAll('.nav-dropdown');
 const dropdownBackground = document.querySelector('.dropdown-background');
@@ -63,14 +64,22 @@ function handleEnter(e) {
     dropdownBackground.style.setProperty('width', `${coords.width}px`);
     dropdownBackground.style.setProperty('height', `${coords.height}px`);
 
-    if (window.scrollY > window.innerHeight / 4) {
+    if (window.scrollY > window.innerHeight / 4) { // If window is scrolled down
         dropdownBackground.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
-        dropdown.style.transform = 'translateY(200%)';
+        dropdown.style.transform = 'translateY(165%)';
         arrow.style.transform = 'translateY(-50%) rotate(45deg)';
-    } else {
+        arrow.style.borderTop = '1px solid white';
+        arrow.style.borderRight = '0px solid white';
+        arrow.style.borderBottom = '0px solid white';
+        arrow.style.borderLeft = '1px solid white';
+    } else { // If window is scrolled to top
         dropdownBackground.style.setProperty('transform', `translate(${coords.left}px, -${coords.top}px)`);
         dropdown.style.transform = 'translateY(-125%)';
-        arrow.style.transform = 'translateY(200%) rotate(45deg)';
+        arrow.style.transform = 'translateY(250%) rotate(45deg)';
+        arrow.style.borderTop = '0px solid white';
+        arrow.style.borderRight = '1px solid white';
+        arrow.style.borderBottom = '1px solid white';
+        arrow.style.borderLeft = '0px solid white';
     };
 };
 
@@ -230,11 +239,18 @@ document.addEventListener('DOMContentLoaded', autoplay);
 
 document.addEventListener('DOMContentLoaded', findNav);
 window.addEventListener('scroll', fixNav);
+myName.addEventListener('click', aboutMe);
 triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
 triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 projectsButton.addEventListener('click', scroll);
 
 // TEMPORARY:
+
+let shit;
+
+function aboutMe() {
+    intro.classList.toggle('about-active');
+}
 
 block = document.querySelectorAll('.block');
 
