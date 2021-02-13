@@ -434,7 +434,7 @@ body {
 .is-hidden { display: none; }
 
 @media only screen and (hover: none) and (pointer: coarse) {
-    #intro {
-        background: gray;
+    #nav {
+        height: 100px;
     }
 }
