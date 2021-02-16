@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    height: 100%;
+    height: auto;
     width: 100%;
     font-size: 16px;
     background-color: black;
@@ -20,9 +20,10 @@ html {
 }
 
 body {
-    height: 100%;
+    height: auto;
     width: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 /* Intro Page */
@@ -89,40 +90,6 @@ body {
     align-self: center;
     font-size: 3rem;
     color: white;
-}
-
-/* ABOUT ME */
-
-.about {
-    color: white;
-    font-size: 7rem;
-    margin: 0;
-    display: none;
-}
-
-.about-active {
-}
-
-.about-active #intro-name {
-
-}
-
-.about-active #into-bio {
-    
-}
-
-#about-hello {
-    margin: 50px 0 0 50px;
-}
-
-#about-i-am {
-}
-
-#about-location {
-}
-
-.about-active .about {
-    display: inline-block;
 }
 
 /* Nav */
@@ -262,7 +229,6 @@ body {
     background-image: url(Assets/pexels-philippe-donn-1169754.jpg);
     background: none;
     background-size: cover;
-    overflow: hidden;
 }
 
 #projects-title {
@@ -436,5 +402,9 @@ body {
 @media only screen and (hover: none) and (pointer: coarse) {
     #nav {
         height: 100px;
+    }
+
+    #intro-name {
+
     }
 }

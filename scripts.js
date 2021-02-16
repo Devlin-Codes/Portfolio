@@ -20,9 +20,12 @@ function prevent(e) {
 // NAV FUNCTIONS:
 
 function findNav() {
-    topOfNav = nav.offsetTop;
     intro.style.height = window.innerHeight - nav.offsetHeight + 'px';
     projects.style.height = window.innerHeight - nav.offsetHeight + 'px';
+    const projectList = document.querySelectorAll('.project');
+    projectList.forEach(project => project.style.setProperty('height', '100%'));
+    projectList.forEach(project => project.style.setProperty('width', '100%'));
+    console.log(intro.style.height)
 };
 
 function fixNav() {
@@ -239,7 +242,7 @@ document.addEventListener('DOMContentLoaded', autoplay);
 
 document.addEventListener('DOMContentLoaded', findNav);
 window.addEventListener('scroll', fixNav);
-myName.addEventListener('click', aboutMe);
+//myName.addEventListener('click', aboutMe);
 triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
 triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 projectsButton.addEventListener('click', scroll);
@@ -260,3 +263,5 @@ block.forEach(navButton => navButton.addEventListener('click', prevent));
 // CHECK ON AUTOPLAY FUNCTION
 
 // WHEN WINDOW CHANGES SIZE RELOAD DOM CONTENT
+
+window.addEventListener('resize', findNav);
